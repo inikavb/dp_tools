@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.7]
+
+### Fixed
+- Fixes incorrect unit detection for runsheet generation [#14](https://github.com/J-81/dp_tools/issues/14)
+## [1.1.6]
+
+### Added
+- Stdout logging for scripts, this better explains what is happening during the script
+
+### Fixed
+- Missing Microarray technology valid combination and handling of multiple valid combinations
+## [1.1.5]
+
+### Fixed
+- Staging runsheets failing to extract unit columns 
+- V&V crash related to factor columns being inferred as numeric. Now correctly inferring as string values.
 
 ## [1.1.4]
 ### Added
@@ -92,3 +108,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [1.1.1]: https://github.com/j-81/dp_tools/compare/1.1.0...1.1.1
 [1.1.2]: https://github.com/j-81/dp_tools/compare/1.1.1...1.1.2
 [1.1.3]: https://github.com/j-81/dp_tools/compare/1.1.2...1.1.3
+[1.1.4]: https://github.com/j-81/dp_tools/compare/1.1.3...1.1.4
+[1.1.5]: https://github.com/j-81/dp_tools/compare/1.1.4...1.1.5
+[1.1.6]: https://github.com/j-81/dp_tools/compare/1.1.5...1.1.6
+[1.1.7]: https://github.com/j-81/dp_tools/compare/1.1.6...1.1.7
