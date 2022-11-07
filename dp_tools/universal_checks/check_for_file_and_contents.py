@@ -1,6 +1,14 @@
 def check_for_file_and_contents(file: path):
-    """ used by check_fastq_files and check_final_outputs functions """
-
+    """Used by check_fastq_files and check_final_outputs functions to confirm existence of files and that they hold content.
+    This is achieved by checking the file name's existence and whether it holds content (make more specific later).
+    
+    :param file: Sample file names to check for presense
+    :type file: str
+    :param path: path of directory
+    :type path: Path
+    :return: Flag Entry denoting successful or failing results. Includes name of sample files and any missing sample files
+    :rtype: FlagEntry
+    """
     if os.path.exists(file): # path exists
             # now checking for content
             if not os.path.getsize(file) > 0: # file is empty
