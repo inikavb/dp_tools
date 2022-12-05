@@ -15,7 +15,7 @@ def test_paired_isa_to_runsheet(glds194_test_dir, tmpdir):
     assert df_runsheet.shape == (13, 8)
     assert (
         hashlib.sha1(pd.util.hash_pandas_object(df_runsheet).values).hexdigest()
-        == "e45962a61d0835a16ab0c905752114900515cf89"
+        == "4b4368ebf60c9e02a11b792030102f8d67e43b67"
     ), "Hash did not match, the means the contents changed. Manually validation and reset of test hash is in order"
 
 
@@ -28,8 +28,22 @@ def test_single_isa_to_runsheet(glds48_test_dir, tmpdir):
     assert df_runsheet.shape == (14, 7)
     assert (
         hashlib.sha1(pd.util.hash_pandas_object(df_runsheet).values).hexdigest()
-        == "7dcbcd0f7a1253fde7b4c32321ea46752a1bc251"
+        == "8322bdba7204e3f685b4af8affec5da9fc5bd526"
     ), "Hash did not match, the means the contents changed. Manually validation and reset of test hash is in order"
+
+
+def test_methylSeq_glds397_isa_to_runsheet(glds397_isazip_path):
+    """This tests isa_to_runsheet on a methylSeq assay, GLDS-397"""
+    df_runsheet = isa_to_runsheet(
+        "GLDS-397", glds397_isazip_path, config = ("methylSeq", "1")
+    )
+
+    assert df_runsheet.shape == (16, 6)  # 1 factor value
+    assert (
+        hashlib.sha1(pd.util.hash_pandas_object(df_runsheet).values).hexdigest()
+        == "57cab80a811540e3f1174ac6b65c7ecc3e7f73f5"
+    ), "Hash did not match, the means the contents changed. Manually validation and reset of test hash is in order"
+
 
 
 # TODO: Enable once microarray test data is included in test repo
